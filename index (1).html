@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Számológép</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        label{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Számológép</h1>
+    
+    <label style="color: red;" for="a">A=</label> <input type="text" id="a"><br>
+    <label for="b">B=</label> <input type="text" id="b"><br>
+    <br>
+    <button onclick="osszeadKattintas();">Összead</button>
+    <button onclick="kivonKattintas();">Kivon</button>
+    <button onclick="szorozKattintas();">Szoroz</button>
+    <button onclick="osztKattintas();">Oszt</button><br>
+
+    <p id="eredmeny"></p>
+
+    <script>
+        function osszeadKattintas(){
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var eredmeny = osszead(a,b);
+            //alert("Eredmény: " + eredmeny);
+            document.getElementById('eredmeny').innerHTML = "Összeadás eredménye: " + eredmeny;
+        }
+    </script>
+    <script>
+        function kivonKattintas(){
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var eredmeny = kivon(a,b);
+            document.getElementById('eredmeny').innerHTML = "Kivonás eredménye: " + eredmeny;
+        }
+    </script>
+    <script>
+        function szorozKattintas(){
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var eredmeny = szoroz(a,b);
+            document.getElementById('eredmeny').innerHTML = "Szorzás eredménye: " + eredmeny;
+        }
+    </script>
+    <script>
+        function osztKattintas(){
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var eredmeny = oszt(a,b);
+            document.getElementById('eredmeny').innerHTML = "Osztás eredménye: " + eredmeny;
+        }
+    </script>
+    
+    <!-- javascript fájlok importálásakor a sorrendre ügyeljünk, más sorrendben hibát kapnánk! -->
+    <script src="muveletek.js" ></script>
+    <script src="masik.js"></script>
+    <script>
+        console.log(osszead('3','7'));
+    </script>
+
+</body>
+</html>

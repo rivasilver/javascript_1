@@ -1,0 +1,1 @@
+console.log(osszead('2','4'));
